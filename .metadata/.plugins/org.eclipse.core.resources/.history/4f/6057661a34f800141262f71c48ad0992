@@ -1,0 +1,110 @@
+package com.orion.contacts;
+
+import com.orion.contacts.R;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+
+
+
+public class DetailedContact  extends Activity {
+	
+	// JSON node keys
+	private static final String TAG_NAME = "name";
+	private static final String TAG_EMAIL = "email";
+	private static final String TAG_PHONE = "phone";
+	private static final String TAG_USERNAME = "username";
+	
+	
+	private static final String TAG_CONTACTS = "user";
+	private static final String TAG_ID = "id";
+		private static final String TAG_ADDRESS = "address";
+	private static final String TAG_STREET = "street";
+	private static final String TAG_SUITE = "suite";
+	private static final String TAG_CITY = "city";
+	private static final String TAG_ZIPCODE = "zipcode";
+	private static final String TAG_GEO = "geo";
+	private static final String TAG_LAT = "lat";
+	private static final String TAG_LNG = "lng";
+	private static final String TAG_WEBSITE = "website";
+	private static final String TAG_COMPANY = "company";
+	private static final String TAG_COMPANY_NAME = "company_name";
+	private static final String TAG_CATCHPHRASE = "catchPhrase";
+	private static final String TAG_BS = "bs";
+	
+	
+	
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.detail_contact);
+        
+        // getting intent data
+        Intent in = getIntent();
+        
+        // Get JSON values from previous intent
+        String name = in.getStringExtra(TAG_NAME);
+        String email = in.getStringExtra(TAG_EMAIL);
+        String phone = in.getStringExtra(TAG_PHONE);
+        String username = in.getStringExtra(TAG_USERNAME);
+        String address = in.getStringExtra(TAG_ADDRESS);
+        String street = in.getStringExtra(TAG_STREET );
+        String suite = in.getStringExtra(TAG_SUITE );
+        String city = in.getStringExtra(TAG_CITY);
+        String zipcode = in.getStringExtra(TAG_ZIPCODE);
+        String geo = in.getStringExtra(TAG_GEO);
+        String lat = in.getStringExtra( TAG_LAT );
+        String lng = in.getStringExtra( TAG_LNG );
+        String website = in.getStringExtra(TAG_WEBSITE);
+        String company = in.getStringExtra(TAG_COMPANY );
+        String company_name = in.getStringExtra(TAG_COMPANY_NAME );
+        String catchPhrase = in.getStringExtra(TAG_CATCHPHRASE);
+        String bs = in.getStringExtra(TAG_BS);
+        
+        
+        // Displaying all values on the screen
+        TextView lblName = (TextView) findViewById(R.id.name_label);
+        TextView lblEmail = (TextView) findViewById(R.id.email_label);
+        TextView lblPhone = (TextView) findViewById(R.id.phone_label);
+        TextView lblUsername = (TextView) findViewById(R.id.username_label);
+        TextView lblAddress = (TextView) findViewById(R.id.address_label);
+        TextView lblStreet = (TextView) findViewById(R.id.street_label);
+        TextView lblSuite = (TextView) findViewById(R.id.suite_label);
+        TextView lblCity = (TextView) findViewById(R.id.city_label);
+        TextView lblZipcode = (TextView) findViewById(R.id.zipcode_label);
+        TextView lblWebsite = (TextView) findViewById(R.id.website_label);
+        TextView lblCompany = (TextView) findViewById(R.id.company_label);
+        TextView lblCompany_name = (TextView) findViewById(R.id.company_label);
+        TextView lblCatchPhrase = (TextView) findViewById(R.id.catchphrase_label);
+        TextView lblBs = (TextView) findViewById(R.id.bs_label);
+        TextView lblLat = (TextView) findViewById(R.id.lat_label);
+        TextView lblLng = (TextView) findViewById(R.id.lng_label);
+      /*  TextView lblPhone = (TextView) findViewById(R.id.phone_label);
+        TextView lblUsername = (TextView) findViewById(R.id.username_label);
+      */  
+        lblName.setText(name);
+        lblEmail.setText("Email: "+email);
+        lblPhone.setText("Phone:  "+phone);
+        lblUsername.setText("\n UserName:  "+username);
+        lblAddress.setText("\n Adddress:  \n"+street + "\n"+ suite + "\n" + city  + "\n"+ zipcode + "\n Latitude: "+lat 
+        		+"        Longitude:  "+ lng);
+       // lblStreet.setText(username); 
+        //lblSuite.setText(username);
+        //lblCity.setText(username);
+        //lblZipcode.setText(username);
+        lblWebsite.setText("\n Website:  "+website);
+        lblCompany.setText("kiy"+company_name);
+        lblCompany_name.setText(" \n kiy3"+company_name);
+        lblCatchPhrase.setText("\nCatch Phrase:  \n"+catchPhrase);
+        lblBs.setText("\n" +bs);
+        
+        
+        
+        
+        
+    }
+}

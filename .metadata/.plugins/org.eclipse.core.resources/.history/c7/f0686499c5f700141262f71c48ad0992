@@ -1,0 +1,67 @@
+package com.orion.contacts;
+
+import com.orion.contacts.R;
+
+import android.app.Activity;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.TextView;
+
+
+
+
+public class DetailedContact  extends Activity {
+	
+	// JSON node keys
+	private static final String TAG_NAME = "name";
+	private static final String TAG_EMAIL = "email";
+	private static final String TAG_PHONE = "phone";
+	private static final String TAG_USERNAME = "username";
+	
+	
+	private static final String TAG_CONTACTS = "user";
+	private static final String TAG_ID = "id";
+		private static final String TAG_ADDRESS = "address";
+	private static final String TAG_STREET = "street";
+	private static final String TAG_SUITE = "suite";
+	private static final String TAG_CITY = "city";
+	private static final String TAG_ZIPCODE = "zipcode";
+	private static final String TAG_GEO = "geo";
+	private static final String TAG_LAT = "lat";
+	private static final String TAG_LNG = "lng";
+	private static final String TAG_WEBSITE = "website";
+	private static final String TAG_COMPANY = "company";
+	private static final String TAG_COMPANY_NAME = "name";
+	private static final String TAG_CATCHPHRASE = "catchPhrase";
+	private static final String TAG_BS = "bs";
+	
+	
+	
+	
+	@Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.detail_contact);
+        
+        // getting intent data
+        Intent in = getIntent();
+        
+        // Get JSON values from previous intent
+        String name = in.getStringExtra(TAG_NAME);
+        String email = in.getStringExtra(TAG_EMAIL);
+        String phone = in.getStringExtra(TAG_PHONE);
+        String username = in.getStringExtra(TAG_USERNAME);
+        
+        
+        // Displaying all values on the screen
+        TextView lblName = (TextView) findViewById(R.id.name_label);
+        TextView lblEmail = (TextView) findViewById(R.id.email_label);
+        TextView lblPhone = (TextView) findViewById(R.id.phone_label);
+        TextView lblUsername = (TextView) findViewById(R.id.username_label);
+        
+        lblName.setText(name);
+        lblEmail.setText(email);
+        lblPhone.setText(phone);
+        lblUsername.setText(username);
+    }
+}

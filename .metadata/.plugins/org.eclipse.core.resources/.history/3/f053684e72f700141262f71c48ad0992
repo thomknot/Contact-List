@@ -1,0 +1,17 @@
+
+
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+    <item android:id="@+id/A2Z"
+        android:orderInCategory="100"
+        
+         android:title = "@string/AZ" />
+      
+      
+    <item android:id="@+id/Z2A" 
+        android:orderInCategory="100"
+       
+      
+         android:title="@string/ZA" />     
+
+</menu>
